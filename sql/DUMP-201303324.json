@@ -1,0 +1,285 @@
+[
+{
+    "pk": 1, 
+    "model": "fileuploader.sensortype", 
+    "fields": {
+        "abbreviation": "sz", 
+        "name": "size"
+    }
+},
+{
+    "pk": 2, 
+    "model": "fileuploader.sensortype", 
+    "fields": {
+        "abbreviation": "p", 
+        "name": "proprietary"
+    }
+},
+{
+    "pk": 3, 
+    "model": "fileuploader.sensortype", 
+    "fields": {
+        "abbreviation": "accx", 
+        "name": "accelerometer_x"
+    }
+},
+{
+    "pk": 4, 
+    "model": "fileuploader.sensortype", 
+    "fields": {
+        "abbreviation": "accy", 
+        "name": "accelerometer_y"
+    }
+},
+{
+    "pk": 5, 
+    "model": "fileuploader.sensortype", 
+    "fields": {
+        "abbreviation": "accz", 
+        "name": "accelerometer_z"
+    }
+},
+{
+    "pk": 6, 
+    "model": "fileuploader.sensortype", 
+    "fields": {
+        "abbreviation": "magx", 
+        "name": "magnetometer_x"
+    }
+},
+{
+    "pk": 7, 
+    "model": "fileuploader.sensortype", 
+    "fields": {
+        "abbreviation": "magy", 
+        "name": "magnetometer_y"
+    }
+},
+{
+    "pk": 8, 
+    "model": "fileuploader.sensortype", 
+    "fields": {
+        "abbreviation": "magz", 
+        "name": "magnetometer_z"
+    }
+},
+{
+    "pk": 9, 
+    "model": "fileuploader.sensortype", 
+    "fields": {
+        "abbreviation": "red", 
+        "name": "red"
+    }
+},
+{
+    "pk": 10, 
+    "model": "fileuploader.sensortype", 
+    "fields": {
+        "abbreviation": "green", 
+        "name": "green"
+    }
+},
+{
+    "pk": 11, 
+    "model": "fileuploader.sensortype", 
+    "fields": {
+        "abbreviation": "blue", 
+        "name": "blue"
+    }
+},
+{
+    "pk": 12, 
+    "model": "fileuploader.sensortype", 
+    "fields": {
+        "abbreviation": "lum", 
+        "name": "luminance"
+    }
+},
+{
+    "pk": 13, 
+    "model": "fileuploader.sensortype", 
+    "fields": {
+        "abbreviation": "tem", 
+        "name": "temperature"
+    }
+},
+{
+    "pk": 14, 
+    "model": "fileuploader.sensortype", 
+    "fields": {
+        "abbreviation": "g", 
+        "name": "gps_status"
+    }
+},
+{
+    "pk": 15, 
+    "model": "fileuploader.sensortype", 
+    "fields": {
+        "abbreviation": "lat", 
+        "name": "latitude"
+    }
+},
+{
+    "pk": 16, 
+    "model": "fileuploader.sensortype", 
+    "fields": {
+        "abbreviation": "lon", 
+        "name": "longitude"
+    }
+},
+{
+    "pk": 17, 
+    "model": "fileuploader.sensortype", 
+    "fields": {
+        "abbreviation": "alt", 
+        "name": "altitude"
+    }
+},
+{
+    "pk": 18, 
+    "model": "fileuploader.sensortype", 
+    "fields": {
+        "abbreviation": "gs", 
+        "name": "gps_groud_speed"
+    }
+},
+{
+    "pk": 19, 
+    "model": "fileuploader.sensortype", 
+    "fields": {
+        "abbreviation": "herr", 
+        "name": "gps_horizontal_error"
+    }
+},
+{
+    "pk": 20, 
+    "model": "fileuploader.sensortype", 
+    "fields": {
+        "abbreviation": "verr", 
+        "name": "gps_vertical_error"
+    }
+},
+{
+    "pk": 21, 
+    "model": "fileuploader.sensortype", 
+    "fields": {
+        "abbreviation": "xor", 
+        "name": "orientation_x"
+    }
+},
+{
+    "pk": 22, 
+    "model": "fileuploader.sensortype", 
+    "fields": {
+        "abbreviation": "yor", 
+        "name": "orientation_y"
+    }
+},
+{
+    "pk": 23, 
+    "model": "fileuploader.sensortype", 
+    "fields": {
+        "abbreviation": "zor", 
+        "name": "orientation z"
+    }
+},
+{
+    "pk": 24, 
+    "model": "fileuploader.sensortype", 
+    "fields": {
+        "abbreviation": "typ", 
+        "name": "type"
+    }
+},
+{
+    "pk": 25, 
+    "model": "fileuploader.sensortype", 
+    "fields": {
+        "abbreviation": "gain", 
+        "name": "gain"
+    }
+},
+{
+    "pk": 26, 
+    "model": "fileuploader.sensortype", 
+    "fields": {
+        "abbreviation": "rbal", 
+        "name": "red_balance"
+    }
+},
+{
+    "pk": 27, 
+    "model": "fileuploader.sensortype", 
+    "fields": {
+        "abbreviation": "gbal", 
+        "name": "green_balance"
+    }
+},
+{
+    "pk": 28, 
+    "model": "fileuploader.sensortype", 
+    "fields": {
+        "abbreviation": "bbal", 
+        "name": "blue_balance"
+    }
+},
+{
+    "pk": 29, 
+    "model": "fileuploader.sensortype", 
+    "fields": {
+        "abbreviation": "exp", 
+        "name": "exposure"
+    }
+},
+{
+    "pk": 30, 
+    "model": "fileuploader.sensortype", 
+    "fields": {
+        "abbreviation": "stags", 
+        "name": "system_tags"
+    }
+},
+{
+    "pk": 31, 
+    "model": "fileuploader.sensortype", 
+    "fields": {
+        "abbreviation": "tags", 
+        "name": "user_tags"
+    }
+},
+{
+    "pk": 1, 
+    "model": "fileuploader.devicetype", 
+    "fields": {
+        "abbreviation": "at", 
+        "add_by_user": 1, 
+        "name": "autographer"
+    }
+},
+{
+    "pk": 2, 
+    "model": "fileuploader.devicetype", 
+    "fields": {
+        "abbreviation": "ss", 
+        "add_by_user": 1, 
+        "name": "sensecam"
+    }
+},
+{
+    "pk": 3, 
+    "model": "fileuploader.devicetype", 
+    "fields": {
+        "abbreviation": "vr", 
+        "add_by_user": 1, 
+        "name": "viconrevue"
+    }
+},
+{
+    "pk": 4, 
+    "model": "fileuploader.devicetype", 
+    "fields": {
+        "abbreviation": "sns", 
+        "add_by_user": 1, 
+        "name": "senseseer"
+    }
+}

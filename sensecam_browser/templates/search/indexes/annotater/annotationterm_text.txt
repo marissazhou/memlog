@@ -1,0 +1,3 @@
+{{ object.concept }}
+{{ object.category }}
+{{ object.user.get_full_name }}

@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block title %} Sensecam Browser  {% endblock %}
+
+{% block content %}
+
+<!-- container -->
+    <div class="row">
+	Index page
+    </div>
+    
+{% endblock %}

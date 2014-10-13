@@ -1,0 +1,13 @@
+{% load staticfiles %}
+<div class="panel panel-default">
+	<div class="panel-heading">
+    	<h3 class="panel-title">Previous Event</h3>
+	</div>
+	<div class="panel-body" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+		{% block previous_event_images %}{% endblock%}	
+	</div>
+	<img id="drag1" src="{% static "sensecambrowser/img/moon.jpg" %}" draggable="true" ondragstart="drag(event)" width="20" height="20">
+	<img id="drag2" src="{% static "sensecambrowser/img/moon.jpg" %}" draggable="true" ondragstart="drag(event)" width="80" height="80">
+	<img id="drag3" src="{% static "sensecambrowser/img/moon.jpg" %}" draggable="true" ondragstart="drag(event)" width="80" height="80">
+	<img id="drag4" src="{% static "sensecambrowser/img/moon.jpg" %}" draggable="true" ondragstart="drag(event)" width="20" height="20">
+</div>

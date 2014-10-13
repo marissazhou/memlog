@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% load static %}
+{% load i18n %}
+
+{% block head-extention %}
+<!-- CSS Files -->
+<link href='{% static "sensecambrowser/css/infovis/base.css" %}' rel="stylesheet">
+<link href='{% static "sensecambrowser/css/infovis/ForceDirected.css" %}' rel="stylesheet">
+
+<!--[if IE]><script language="javascript" type="text/javascript" src="../../Extras/excanvas.js"></script><![endif]-->
+
+<!-- Google js API Library File -->
+<script type="text/javascript" src="https://www.google.com/jsapi"></script>
+
+<!-- JIT Library File -->
+<script src='{% static "sensecambrowser/js/infovis/jit-yc.js" %}' type="text/javascript"></script>
+
+<!-- Example File -->
+<script src='{% static "sensecambrowser/js/infovis/example1.js" %}' type="text/javascript"></script>
+{% endblock %}
+{% block title %} Linkage Analysis of Lifelog{% endblock %}
+
+{% block content %}
+	{% include "visualization/includes/linked_data.html" %}	
+<script>
+window.onload = function () {
+	      init();
+}
+</script>
+
+
+{% endblock %}

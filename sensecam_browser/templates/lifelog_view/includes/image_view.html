@@ -1,0 +1,122 @@
+<!-- 
+/*
+ * Contact      : marissa.zhou.cn@gmail.com 
+ */
+-->
+{% load staticfiles %}
+<!--Start Album Info -->
+<div style="padding-bottom:1px;" id ="albumInfo" class="col-md-12">
+
+	<table style="height:100%;width:100%;" class="table table-condensed table-bordered">
+
+		<tr>
+			<td class ="col-md-3"><strong>Selected Album:</strong></td>
+			<td class ="col-md-3"id="selectedAlbum">-</td>
+			<td class ="col-md-3"><strong>Album Submitted:</strong></td>
+			<td class ="col-md-3" id="selectedAlbumStatus">-</td>
+		</tr>
+
+		<tr>
+			<td><strong>Number Images:</strong></td>
+			<td id="numImages">-</td>
+			<td> <strong>Wear Time:</strong></td>
+			<td id="wearTimeEst">-</td>
+		</tr>
+
+	</table>
+</div>
+<!--End Album Info -->
+
+<div  class="col-md-12" style="background-color: #f5f5f5; border-top-left-radius: 6px; border-top-right-radius: 6px">
+
+	<div id="tabs" class="nav row" data-tabs="tabs" style="padding: 10px 0px 0px 6px;">
+
+		<div class="active col-md-1">
+			<a style="color: #62c462;" href="#singleImgView" data-toggle="tab"><i id="singleImgSwitch" class="hidden fa fa-square fa-2x"></i></a>
+			<a style="color: #62c462;" href="#multiImgView" data-toggle="tab"><i id="multiImgSwitch" class="fa fa-th fa-2x"></i></a>
+		</div>
+		<div id="imgTime" class="col-md-10" >Image  </div>
+
+	</div>
+
+</div>
+
+<!--Start tabs container-->
+<div id="my-tab-content" class="tab-content col-md-12" style="background-color: rgb(243, 240, 240); padding-right:2px; padding-left:2px; border-bottom-left-radius: 4px; border-bottom-right-radius: 4px">
+
+	<!-- Start first tab pane -->
+	<div id="singleImgView" class="tab-pane active  col-md-12" style="padding: 0px">
+
+		<div style= "width:100%; height:555px; border: white 3px solid; margin: auto;background-color: white">
+
+			<div id="imgControls" class="img-wrap hidden controls">
+				<span id="imgUncodable" class="fa-stack fa-lg"><i class="fa fa-camera fa-stack-1x"></i><i class="fa fa-ban fa-stack-2x text-danger"></i></span>
+				<span id="imgDelete" class="close"><i class="fa fa-trash-o"></i></span>
+				<img id="singleImg" width="100%" height="555px" >
+			</div>
+		</div>
+	</div>
+	<!-- End first tab pane -->
+	<!-- Start second tab pane -->
+	<div id="multiImgView" class="tab-pane" style="width:100%; background-color: rgb(243, 240, 240); padding:0px">
+
+		<div id="multiImgDiv"  class ="multi-thumb-div">
+
+		</div>
+
+	</div>
+	<!-- End second tab pane -->
+</div>
+<!--End tabs div-->
+<!--Start Play Slider Info -->
+<div id="controller_movie_play" class="col-md-12" style="background-color: rgb(100, 100, 100); border-bottom-left-radius: 6px; border-bottom-right-radius: 6px">
+
+		<div id="slider_play" class="col-md-12 row controls hidden" style="margin-left:0; margin-right:0;">
+			<div id="slider-image" class="slider slider-horizontal hidden"></div>
+		</div>
+		<!--Grant can change here start----- -->
+		<!--This is where the multiple event slider is. Currently it is not a multipe slider, need to find a feasible component for multiple event marking purposes----- -->
+		<div id="slider_event_timeline" class="col-md-12 row hidden" style="margin-left:0; margin-right:0;">
+			<div id="slider_events" class="slider slider-horizontal"></div>
+		</div>
+		<!--Grant can change here end----- -->
+		<div id="btn_movie_play" class="row" style="margin: 5px 1px 1px 1px;" class="hidden">
+
+			<div id="nav-buttons"  class=" hidden controls" style="color:white">
+				<div class="col-md-1" >
+				</div>
+				<div class="col-md-10" >
+					<div id="carouselButtons">
+						<div class="col-md-4" >
+							<button id="prevImgFast" type="button" class="btn btn-default btn-xs">
+								<span class="glyphicon glyphicon-fast-backward"></span>
+							</button>
+							<button id="prevImg" type="button" class="btn btn-default btn-xs">
+								<span class="glyphicon glyphicon-step-backward"></span>
+							</button>
+						</div>
+						<div class="col-md-4" >
+							<button id="playButton" type="button" class="btn btn-default btn-xs">
+								<span class="glyphicon glyphicon-play"></span>
+							 </button>
+							<button id="pauseButton" type="button" class="btn btn-default btn-xs">
+								<span class="glyphicon glyphicon-pause"></span>
+							</button>
+						</div>
+						<div class="col-md-4" >
+							<button id="nextImg" type="button" class="btn btn-default btn-xs">
+								<span class="glyphicon glyphicon-step-forward"></span>
+							</button>
+							<button id="nextImgFast" type="button" class="btn btn-default btn-xs">
+								<span class="glyphicon glyphicon-fast-forward"></span>
+							</button>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-1" >
+				</div>
+			</div>
+		</div>
+	</div>
+	<!--End Event Timeline Slider Info -->
+</div>

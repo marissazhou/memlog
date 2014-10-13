@@ -1,0 +1,23 @@
+{% load staticfiles %}
+<!-- http://coffeescripter.com/code/ad-gallery/#ad-image-11 -->
+<div id="annotater-event">
+	    {% include "gallery/previous_event_images.html" %}
+	    {% include "gallery/next_event_images.html" %}
+
+    <div id="gallery" class="ad-gallery">
+      <div class="ad-controls">
+      </div>
+      <div class="ad-nav">
+        <div class="ad-thumbs">
+	    {% include "annotater/includes/annotater_image.html" %}
+	    {% include "annotater/includes/annotater_image.html" %}
+	    {% include "annotater/includes/annotater_image.html" %}
+	    {% include "annotater/includes/annotater_image.html" %}
+        </div>
+      </div>
+    </div>
+
+    <div id="descriptions">
+
+    </div>
+</div>

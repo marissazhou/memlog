@@ -1,0 +1,51 @@
+      <div style="padding-top:-15px; padding-bottom:-15px; margin-bottom:2px" class="navbar navbar-default navbar-collapse collapse navbar-menu">
+
+        <!-- <div class="container"> -->
+<!--           <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/prime/">Prime</a>
+          </div> 
+          -->
+      <div class="container">
+		{% if user.is_authenticated %}
+			{% include "includes/log_navi.html" %}
+		{% else %}
+			{% include "includes/unlog_navi.html" %}
+		{% endif %}
+      </div>
+
+<!--
+prefer to use this navigation
+<div class="navbar navbar-default navbar-fixed-top navbar-inverse">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-fixed-top .navbar-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="https://github.com/blueimp/Bootstrap-Image-Gallery">My Lifelog</a>
+        </div>
+        <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+                <li><a href="./">Shared</a></li>
+                <li><a href="./">Favorite</a></li>
+                <li><a href="./">Group Lifelog</a></li>
+                <li><a href="/contact/">Contact</a></li>
+                <li class="dropdown">
+                 <a href="#" class="dropdown-toggle" data-toggle="dropdown"> Tools <b class="caret"></b></a>
+                 <ul class="dropdown-menu">
+                   <li><a href="/contact/">Lifelog Uploader</a></li>
+                   <li><a href="/faq/">Event Segmentor</a></li>
+                   <li><a href="/faq/">Physical Activity Detector</a></li>
+                 </ul>                
+               </li>
+            </ul>
+        </div>
+    </div>
+</div>
+-->

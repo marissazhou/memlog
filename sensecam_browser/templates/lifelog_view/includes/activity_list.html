@@ -1,0 +1,26 @@
+{% load staticfiles %}
+<div style="padding-bottom:1px;" class="col-md-12">
+
+	<table style="height:100%;width:100%;" id="activityInfo" class="table table-condensed table-bordered">
+		<tr>
+			<td class ="col-md-3">Start</td>
+			<td class ="col-md-3">End</td>
+			<td class ="col-md-3">Activity</td>
+			<td class ="col-md-3" id="check">check</td>
+		</tr>
+		<!-- this is for single day data loading -->
+		<!--
+		{% for activity in activities %}
+		<tr>
+			<td class ="col-md-3">activity.start_time</td>
+			<td class ="col-md-3">activity.end_time</td>
+			<td class ="col-md-3">activity.pa_type</td>
+			<label class="btn btn-default" value="{{correct}}">
+	        	<input type="checkbox"> {{ correct }}
+			</label>
+		</tr>
+		{% endfor %}
+		-->
+
+	</table>
+</div>

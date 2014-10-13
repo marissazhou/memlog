@@ -1,0 +1,10 @@
+{% load staticfiles %}
+<li>
+	<a href='{% static "{{ event.keyframe }}" %}'><img src='{% static "{{ event.keyframe }}" %}' alt= "{{ event.title }}" /></a>
+	<div class="block">
+		<h2>{{ event.title }}</h2>
+		<small>{{ event.start_time }}</small>
+		<p>{{ event.description }}<br /><a href="http://dribbble.com/shots/1212154-Waiter" target="_blank">{{event.title}}</a></p>
+
+	</div>
+</li>

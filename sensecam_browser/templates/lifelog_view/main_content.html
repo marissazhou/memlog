@@ -1,0 +1,23 @@
+{% load staticfiles %}
+<div clas="row">
+
+<input type="hidden" id="ipt_username" name="username" value="{{ username }}">
+<input type="hidden" id="ipt_album_dates" name="album_dates" value="{{album_dates}}">
+<input type="hidden" id="ipt_albums" name="albums" value="{{ albums }}">
+<input type="hidden" id="ipt_cur_album" name="cur_album" value="{{ cur_album }}">
+<input type="hidden" id="ipt_act" name="activities" value="{{ activities }}">
+
+	<!--Start mid section -->
+    <div style="padding-left:2px; padding-right:5px;" class="col-md-9" >
+		{% include "lifelog_view/includes/image_view.html" %}
+    </div>
+	<!-- End mid section -->
+    <!-- Start right side -->
+    <div style="padding-left:0px; padding-right:1px;" class="col-md-3" >
+	{% block annotate_panel %}{% endblock %}
+	{% include "lifelog_view/includes/activity_list.html" %}
+    </div>
+    <!-- End right side -->
+
+
+    <script src='{% static "sensecambrowser/js/annotater.js" %}' type="text/javascript"></script>

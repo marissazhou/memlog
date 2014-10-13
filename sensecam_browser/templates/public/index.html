@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block title %} MemLog System DCU {% endblock %}
+
+{% block content %}
+
+<!-- container -->
+{% if user.is_authenticated %}
+	<div class="">
+{% else %}
+	<div class="container">
+{% endif %}
+    <div class="row">
+		{% include "includes/unlog_publications.html" %}
+    </div>
+</div>
+{% endblock %}

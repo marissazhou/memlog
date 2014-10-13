@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% load static %}
+{% load i18n %}
+
+{% block title %} Annotator {% endblock %}
+
+{% block content %}
+	{% if is_annotater %}
+	{% else %}
+	{% endif %}
+
+	{% include "lifelog_view/main_content.html" %}	
+
+{% endblock %}

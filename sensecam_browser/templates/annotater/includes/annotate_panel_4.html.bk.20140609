@@ -1,0 +1,72 @@
+{% include "annotater/includes/js.html" %}
+<div id="pop-message"></div>
+<div class="btn-group">
+	<!-- Button trigger modal -->
+  	<button id="btnreset" type="button" class="btn btn-info" onclick="reset_annotation();">Reset</button>
+  	<button id="btnsubmit" type="button" class="btn btn-success" onclick="submit_annotation();">Submit</button>
+</div>
+
+<div class="panel-group" id="accordion">
+{% for category, terms in anno_terms.items %}
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">{{ category }}</a>
+      </h4>
+    </div>
+    <div id="collapse_{{category}}" class="panel-collapse collapse in">
+      <div class="panel-body">
+		<div id="btn_group_{{category}}" class="btn-group" data-toggle="buttons">
+			{% for term in terms %}
+			<label class="btn btn-default" value="{{term}}">
+				<input type="checkbox"> {{ term }}
+			</label>
+			{% endfor %}
+	  	</div>
+      </div>
+    </div>
+  </div>
+{% endfor %}
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title" id="myModalLabel">Add new term for annotation</h4>
+      </div>
+      <div class="modal-body">
+<!-- start form-->
+<form class="form-horizontal" id="form_add_term" enctype="multipart/form-data" action="/annotater/add_term" method="post" name="add_term_form">{% csrf_token %}
+  <div class="form-group">
+    <label for="inputEmail3" class="col-sm-2 control-label">Concept</label>
+    <div class="col-sm-10">
+      <input type="text" class="form-control" id="add_term_concept" name="add_term_concept" placeholder="concept">
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="inputPassword3" class="col-sm-2 control-label">Category</label>
+    <div class="col-sm-10">
+        <!-- start -->
+        <select style="display: none;" id="add_term_category" name="add_term_category">
+        {% for category, terms in anno_terms.items %}
+            <option value="{{ category }}">{{ category }}</option>
+        {% endfor %}
+        </select>
+        <!-- end-->
+    </div>
+  </div>
+</form>
+
+<!-- end form-->
+</div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary" onclick="add_new_term();">Add term</button>
+      </div>
+    </div>
+  </div>
+</div>
+

@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block content %}
+
+
+
+
+<!-- Start left column {{ username }} -->
+<div style="padding-left:1px; padding-right:5px;" class="col-md-5">
+</div>
+<!-- End left column -->
+<!--Start mid section -->
+<div style="padding-left:5px; padding-right:5px;" class="col-md-2 text-center">
+<form method="post" action=".">{% csrf_token %}
+  {{ form.as_p }}
+
+ <!-- <input type="submit" value="{% trans 'Log in' %}" />-->
+	<p>
+	<label class="checkbox">
+	  <input value="remember-me" type="checkbox"> Remember me</input>
+	</label>
+	</p>
+  	<button class="btn btn-large btn-primary" type="submit" value="{% trans 'Log in' %}">Sign in</button>
+  	<input type="hidden" name="next" value="{{ next }}" />
+</form>
+
+
+
+<p>{% trans "Forgot password" %}? <a href="{% url 'auth_password_reset' %}">{% trans "Reset it" %}</a>!</p>
+<p>{% trans "Not member" %}? <a href="{% url 'registration_register' %}">{% trans "Register" %}</a>!</p>
+        </div>
+        <!-- End mid section -->
+
+    <!-- End left side -->
+    <!-- Start right side -->
+    <div style="padding-left:0px; padding-right:1px;" class="col-md-5" >
+    </div>
+    <!-- End right side -->
+
+</div>
+
+{% endblock %}
+<!-- test
+<div class="col-lg-6">
+    <div class="input-group">
+  {_{ form.as_p }}
+  <input type="text" class="form-control">
+		<span class="input-group-btn">
+				<button class="btn btn-default" type="button">Log in</button>
+	  </span>
+</div><!-- /input-group -->
+</div><!-- /.col-lg-6 -->
+							-->

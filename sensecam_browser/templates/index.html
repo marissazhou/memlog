@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block title %} MemLog System DCU {% endblock %}
+
+{% block content %}
+
+<!-- container -->
+{% if user.is_authenticated %}
+	<div class="">
+{% else %}
+	<div class="container">
+{% endif %}
+    <div class="row">
+   	{% if user.is_authenticated %}
+		{% include "includes/calender_date_range.html" %}	
+		{% include "includes/right_main.html" %}	
+    {% else %}
+		{% include "includes/calender_icon.html" %}	
+		{% include "public/lifelog_view.html" %}	
+    {% endif %}
+        <hr />
+    </div>
+</div>
+{% endblock %}

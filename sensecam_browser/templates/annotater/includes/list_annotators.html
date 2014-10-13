@@ -1,0 +1,44 @@
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title">Annotators</h3>
+  </div>
+  <div class="panel-body" style="width:  100%;  height:  300px;  overflow:  scroll;">
+	<div id="btn_group_annotater" class="list-group">
+		{% for annotator in annotators %}
+		<div class="row">
+			<div class="col-md-6">
+			<div class="list-group-item list-group-item-success">{{ annotator.alias }}</div>
+    		</div><!-- col-md-6 -->
+			<div class="col-md-6">
+				<div class="btn-group">
+					<button title="Cheese, Mozzarella, Mushrooms" type="button" class="multiselect dropdown-toggle btn btn-link" data-toggle="dropdown">Cheese, Mozzarella, Mushrooms <b class="caret"></b></button>
+					<ul class="multiselect-container dropdown-menu">
+						{% for subject in subjects %}
+						<li class="active"><a href="javascript:void(0);"><label class="checkbox"><input value="cheese" type="checkbox"> {{ subject.alias }}</label></a></li>
+						{% endfor %}
+					</ul>
+				</div>
+    		</div><!-- col-md-6 -->
+    	</div><!-- row -->
+		{% endfor %}
+    </div>
+  </div>
+</div>
+
+<script type="text/javascript">
+    $(document).ready(function() {
+        window.prettyPrint() && prettyPrint();
+//      $('#add_term_category').multiselect();
+//
+//      {% for category,terms in anno_terms.items %}
+//          $('#annotation_term_{{ category|escapejs }}').multiselect();
+//      {% endfor %}
+    });
+    $(function(){
+        $("select").multiselect();
+    });
+$('#example3').multiselect({
+			            buttonClass: 'btn btn-link'
+			        });
+</script>
+            

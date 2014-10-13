@@ -1,0 +1,47 @@
+<div class="bs-docs-example">
+	<div style="padding-bottom:15px;padding-right:30px;" class="hero-unit">
+        <div class= "row">
+			<div class="col-md-7">
+				<div class="btn-group"> 
+					<button class="btn btn-success dropdown-toggle" data-toggle="dropdown">Annotatee <span class="caret"></span></button>
+					<ul class="dropdown-menu">
+					{% for annotatee in annotatees %}
+						<li><a onclick="select_annotatee({{annotatee.subject}})" id="annotatee_{{annotatee.subject}}">{{annotatee.subject}}</a></li>
+					{% endfor %}
+					</ul>
+				</div>
+    		</div>
+			<div class="col-md-5">
+				<button type="button" class="btn btn-warning" id="add-annotation-term" data-toggle="modal" data-target="#myModal">New Term</button>
+    		</div>
+
+		</div>
+    </div>
+</div>
+
+<script>
+function select_annotatee(annotatee){
+    var annotation_list = []; // list of ids of the annotated terms
+    var selectedImgsIds = getSelectedImgsIds();
+
+    $('.panel .btn-group .btn.active').each(function() {
+        txt = $.trim($(this).text());
+        annotation_list.push(txt);
+    });
+    data = {"image_ids": selectedImgsIds, "annotation_terms": annotation_list};
+    annotation_data = {"image_ids": selectedImgsIds, "annotation_terms": annotation_list};
+    var args = {
+        type: "POST",
+        url: "/annotater",
+        data: annotation_data,
+        success: function(response) {
+            console.log(response);
+        },
+        error: function(response) {
+            console.log("failed!");
+        }
+    };
+    $.ajax(args);
+    $('#pop-message')[0].innerHTML=data.message;
+}
+</script>

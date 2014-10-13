@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% load static %}
+{% load i18n %}
+
+{% block title %} Annotator {% endblock %}
+
+{% block annotate-left %}
+	{% include "annotater/annotate-left.html" %}	
+{% endblock %}
+{% block content %}
+	{% include "annotater/annotater_ucsd.html" %}	
+{% endblock %}

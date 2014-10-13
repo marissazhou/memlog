@@ -1,0 +1,133 @@
+{% load staticfiles %}
+<div clas="row">
+
+<input type="hidden" id="ipt_username" name="username" value="{{ username }}">
+<input type="hidden" id="ipt_album_dates" name="album_dates" value="{{album_dates}}">
+<input type="hidden" id="ipt_albums" name="albums" value="{{ albums }}">
+
+    <!-- Start left side -->
+    <div class="col-md-9" >
+
+        <!-- Start left column {{ username }} -->
+        <div class="col-md-3">
+			{% include "annotater/includes/calender.html" %}
+        </div>
+        <!-- End left column -->
+
+        <!--Start mid section -->
+
+        <div class="col-md-9 text-center">
+
+            <!--Start Album Info -->
+            <div id ="albumInfo" class="col-md-offset-1 col-md-10">
+
+                <table class="table table-condensed table-bordered">
+
+                    <tr>
+                        <td class ="col-md-3"><strong>Selected Album:</strong></td>
+                        <td class ="col-md-3"id="selectedAlbum">-</td>
+                        <td class ="col-md-3"><strong>Album Submitted:</strong></td>
+                        <td class ="col-md-3" id="selectedAlbumStatus">-</td>
+                    </tr>
+
+                    <tr>
+                        <td><strong>Number Images:</strong></td>
+                        <td id="numImages">-</td>
+                        <td> <strong>Wear Time:</strong></td>
+                        <td id="wearTimeEst">-</td>
+                    </tr>
+
+                </table>
+            </div>
+            <!--End Album Info -->
+
+            <div  class="col-md-12" style="background-color: black; border-top-left-radius: 6px; border-top-right-radius: 6px">
+
+                <div id="tabs" class="nav row" data-tabs="tabs" style="padding: 10px 0px 0px 6px;">
+
+                    <div class="active col-md-1" style="background-color: black">
+                        <a style="color: white;" href="#singleImgView" data-toggle="tab"><i id="singleImgSwitch" class="hidden fa fa-square fa-2x"></i></a>
+                        <a style="color: white;" href="#multiImgView" data-toggle="tab"><i id="multiImgSwitch" class="fa fa-th fa-2x"></i></a>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!--Start tabs container-->
+            <div id="my-tab-content" class="tab-content col-md-12" style="background-color: black; border-bottom-left-radius: 4px; border-bottom-right-radius: 4px">
+
+                <!-- Start first tab pane -->
+                <div id="singleImgView" class="tab-pane active  col-md-12" style="height:600px; background-color: black; padding: 0px">
+
+                    <div style= "width:645px; height:485px; border: white 3px solid; margin: auto;background-color: white">
+
+                        <div id="imgControls" class="img-wrap hidden controls">
+                            <span id="imgDelete" class="close"><i class="fa fa-trash-o"></i></span>
+                            <!--<img id="singleImg" width="693" height="520" >-->
+                            <img id="singleImg" width="640" height="480" >
+                        </div>
+
+                    </div>
+
+
+                    <div class="row" style="margin: 5px 1px 1px 1px;">
+
+                        <div id="nav-buttons"  class=" hidden controls" style="color:white">
+
+                            <button id="prevImg" class=" col-md-3"> << Prev (Z) </button>
+                            <div id="imgTime" class="col-md-6" >Image  </div>
+                            <button id="nextImg" class="col-md-3"> (x) Next >> </button>
+
+                        </div>
+                    </div>
+                    <div class="row controls hidden" style= "margin:auto;">
+
+                        <div id="slider1" class="slider  col-md-12 slider-horizontal hidden" style= "width: 640px" ></div>
+
+                    </div>
+
+
+                </div>
+                <!-- End first tab pane -->
+
+                <!-- Start second tab pane -->
+                <div id="multiImgView" class="tab-pane" style="height:600px; background-color: black; padding:0px">
+
+                    <div id="multiImgDiv"  class ="multi-thumb-div">
+
+                    </div>
+
+                </div>
+                <!-- End second tab pane -->
+
+            </div>
+            <!--End tabs div-->
+
+        </div>
+        <!--End Mid section-->
+
+    </div>
+    <!-- End left nav bar -->
+
+    <!-- Start right nav bar -->
+    <div class="col-md-3">
+        <div class="panel-group">
+            <div class="panel-group">
+				<!-- annotation panel -->
+				{% if is_annotater %}
+					{% include "annotater/includes/event_annotate_panel_1.html" %}
+				{% else %}
+					<p>You are not an annotater</p>
+        			{{ username }}
+				{% endif %}
+
+            </div>
+        </div>
+
+    </div>
+    <!-- End right nav bar -->
+
+</div>
+
+    <script src='{% static "sensecambrowser/js/annotater.js" %}' type="text/javascript"></script>

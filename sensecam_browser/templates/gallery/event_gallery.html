@@ -1,0 +1,23 @@
+{% load staticfiles %}
+<div id="event_main" class="event_container">
+	<div class="main_image">
+		<img src='{% static "sensecambrowser/img/banner01.png" %}' alt="- banner1" />
+		<div class="desc">
+			<a href="#" class="collapse">Close Me!</a>
+			<div class="event_block">
+				<h2>Luigi's Mansion</h2>
+				<small>08/27/2013</small>
+				<p>Autem conventio nimis quis ad, nisl secundum sed, facilisi, vicis augue regula, ratis, autem. Neo nostrud letatio aliquam validus eum quadrum, volutpat et.<br /><a href="http://dribbble.com/shots/1212598-Luigi-s-Mansion" target="_blank">Artwork By Glenn Jones</a> </p>
+			</div>
+		</div>
+	</div>
+	<div class="image_thumb">
+		<ul>
+		{% for event in events %}
+		{% include 'includes/event_profile.html' %}
+		{% endfor%}
+		</ul>
+	</div>
+</div>
+
+<!-- http://coffeescripter.com/code/ad-gallery/#ad-image-11 -->

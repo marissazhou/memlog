@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block content %}
+<form method="post" action=".">
+<!-- You need to add {_% csrf_token %} in your form
+
+https://docs.djangoproject.com/en/1.4/ref/contrib/csrf/-->
+  {% csrf_token %}
+
+  {{ form.as_p }}
+
+  <input type="submit" value="{% trans 'Submit' %}" />
+</form>
+{% endblock %}

@@ -1,0 +1,20 @@
+<!-- Temporary - currently here to apply style to the page (quick and dirty) -->
+{% load i18n %}
+
+<div class="col-xs-10">
+	<div class="col-xs-7">
+		<div class="well">
+			<!-- The container for the list of example images -->
+			{% include "gallery/previous_next_date.html" %}
+			<div id="links"></div>
+			{% include "gallery/event_lightbox.html" %}
+			<br>
+		</div>
+<!--		<div class="space-separator-2"></div> -->
+	</div>
+	<div class="col-xs-4">
+		{% include "annotater/annotater.html" %}
+		{% include "annotater/includes/annotate_buttons.html" %}
+	</div>
+</div>
+

@@ -1,0 +1,49 @@
+{% load staticfiles %}
+{% load i18n %}
+<!-- HTML5 doctype -->
+<!DOCTYPE html>
+<html>
+  <head>
+      {% block head-extention %}{% endblock %}
+      {% include "includes/head.html" %}   
+  </head>
+  <body>
+	{% if user.is_authenticated %}
+	<div class="sidebar">
+	  <div class="sidebar-toggle"></div>
+	  <div style="padding-left:1px; padding-right:5px;" class="col-md-3 sidebar-content">
+		{% include "lifelog_view/includes/calender.html" %}
+		{% block annotate-left %}{% endblock %}
+	  </div>
+	</div>
+    
+    <!-- Container -->
+    <div class='right-content'>
+	{% else %}
+	<!-- Container -->
+	<div class='container-cohe'>
+	{% endif %}
+
+      {% include "includes/top.html" %}           
+      {% include "includes/header.html" %}   
+      {% include "includes/navigation.html" %}   
+
+      <!-- Main -->
+      <!-- Can change soon to <main> but not all browsers recognise this yet e.g. http://html5doctor.com/the-main-element/ -->
+      <!-- Some issues with using main.html as an include... will review -->
+      <div class="main">
+        <div class="row">
+         <div style="padding-left:2px; padding-right:2px;" class="col-dp-0">
+         {% block content %}{% endblock %}
+         </div> 
+        </div> 
+      </div>
+
+      {% include "includes/footer.html" %} 
+
+    </div>
+    <!-- end Container -->
+
+  </body>
+  {% include "includes/js.html" %}   
+</html>

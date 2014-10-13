@@ -1,0 +1,246 @@
+<script type="text/javascript">
+
+var cur_terms = []; // current annotation terms
+var cur_category = ""; //current chosen pass/category
+
+function add_new_term() {
+	var concept=document.forms["add_term_form"]["add_term_concept"].value;
+	var category = $('#add_term_category').val();
+	if (concept==null || concept==""){
+  		alert("Concept must be filled out");
+  		return false;
+	}
+    if ($.trim($("#add_term_concept, #add_term_category").val()) === "") {
+   		alert('you did not fill out one of the fields');
+    }
+	add_term_data = {"post_mark": "ad", "concept": concept, "category": category};
+	var args = {
+       	type: "POST",
+       	url: "/annotater",
+       	data: add_term_data,
+		success: function(response) {
+			location.reload();
+        	console.log(response);
+        },
+        error: function(response) {
+        	console.log("add new term failed!");
+        }
+    };
+	$.ajax(args);
+}
+
+//document.addEventListener('DOMContentLoaded', submit_annotation, false);
+function submit_annotation() {
+	//alert("submit_annotation");
+	var annotation_list = []; // list of ids of the annotated terms
+	var selectedImgsIds = getSelectedImgsIds();
+
+	$('.well .btn-group .btn.active').each(function() {
+	//$('.panel .btn-group .btn.active').each(function() {
+		txt = $.trim($(this).text());
+		annotation_list.push(txt);
+	});
+	//console.log(annotation_list);
+	//data = {"image_ids": selectedImgsIds, "annotation_terms": annotation_list};
+	annotation_data = {"post_mark": "an", "image_ids": selectedImgsIds, "annotation_terms": annotation_list};
+	var args = {
+       	type: "POST",
+       	url: "/annotater",
+       	data: annotation_data,
+		success: function(response) {
+			//here reset annotation terms
+			reset_annotation()
+        	console.log(response);
+        },
+        error: function(response) {
+        	console.log("failed!");
+        }
+    };
+	$.ajax(args);
+}
+
+
+//document.getElementById ("btnreset").addEventListener ("click", reset_annotation, false);
+function reset_annotation() {
+	// need to modify and debug
+	//alert("reset_annotation");
+	//alert("{{ anno_terms}}");
+	/*
+	for (var i=0;i<anno_terms.length;i++)
+	{ 
+		category = anno_terms[i]
+		//alert("{{ category }}")
+		btn_group_{{category}}
+		$('#selector button').click(function() {
+				$('#selector button').addClass('active').not(this).removeClass('active');
+		});
+	}
+	*/
+	$('.well .btn-group .btn.active').each(function() {
+		$(this).removeClass('active');
+	});
+}
+
+
+function select_annotatee(annotatee){
+    var annotation_list = []; // list of ids of the annotated terms
+    var selectedImgsIds = getSelectedImgsIds();
+
+    $('.panel .btn-group .btn.active').each(function() {
+        txt = $.trim($(this).text());
+        annotation_list.push(txt);
+    });
+    data = {"image_ids": selectedImgsIds, "annotation_terms": annotation_list};
+    annotation_data = {"image_ids": selectedImgsIds, "annotation_terms": annotation_list};
+    var args = {
+        type: "POST",
+        url: "/annotater",
+        data: annotation_data,
+        success: function(response) {
+            console.log(response);
+        },
+        error: function(response) {
+            console.log("failed!");
+        }
+    };
+    $.ajax(args);
+    $('#pop-message')[0].innerHTML=data.message;
+}
+
+
+//document.getelementById ("btnsubmit").addEventListener ("click", submit_annotation);
+function post_to_url(path, params, method) {
+    method = method || "post"; // Set method to post by default if not specified.
+
+    // The rest of this code assumes you are not using a library.
+    // It can be made less wordy if you use one.
+    var form = document.createElement("form");
+    form.setAttribute("method", method);
+    form.setAttribute("action", path);
+
+    for(var key in params) {
+        if(params.hasOwnProperty(key)) {
+            var hiddenField = document.createElement("input");
+            hiddenField.setAttribute("type", "hidden");
+            hiddenField.setAttribute("name", key);
+            hiddenField.setAttribute("value", params[key]);
+
+            form.appendChild(hiddenField);
+         }
+    }
+    document.body.appendChild(form);
+    form.submit();
+}
+
+function loadXMLDoc(path, params, method){
+    method = method || "post"; // Set method to post by default if not specified.
+	var xmlhttp;
+	if (window.XMLHttpRequest)
+	  {// code for IE7+, Firefox, Chrome, Opera, Safari
+	  xmlhttp=new XMLHttpRequest();
+	  }
+	else
+	  {// code for IE6, IE5
+	  xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+	  }
+	xmlhttp.onreadystatechange=function()
+	  {
+	  if (xmlhttp.readyState==4 && xmlhttp.status==200)
+		{
+		document.getElementById("message").innerHTML=xmlhttp.responseText;
+		}
+	  }
+	xmlhttp.open(method,path,true);
+	xmlhttp.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+	xmlhttp.setRequestHeader("HTTP_X_REQUESTED_WITH","XMLHttpRequest");
+	data = {}
+	xmlhttp.send(params);
+}
+
+$(document).ready(function() {
+	window.prettyPrint() && prettyPrint();
+//		$('#add_term_category').multiselect();
+//
+//		{% for category,terms in anno_terms.items %}
+//			$('#annotation_term_{{ category|escapejs }}').multiselect();
+//		{% endfor %}
+	//
+	$('#choose_category').change(function(){
+		// 1. change terms to annotate
+		// 2. initiate images
+		// SOLUTION_1: send an ajax request to server, handle this request using django application, send a response back to the client and manipulate the DOM
+		// SOLUTION_2: update components using the current data 
+		cur_category = $('#choose_category option:selected').text();
+		cur_terms = {{ anno_terms | safe }}[cur_category];
+		// update term list
+		div_content = ""
+		for (var i=0;i<cur_terms.length;i++) {
+			term = cur_terms[i];
+			div_content = div_content+"<label class='btn btn-default' value='"+term+"<input type='checkbox'>"+term+"</label>"
+		}
+		$("#btn_group_cur_terms").empty();
+		$("#btn_group_cur_terms").append(div_content);
+		// update image view
+		$("my-tab-content").load(document.URL+"my-tab-content");
+		// alert(cur_terms[0]);
+		// alert(category);
+		/*
+		choose_category_data = {"post_mark": "cc", "concept": concept, "category": category};
+		var args = {
+			type: "POST",
+			url: "/annotater",
+			data: choose_category_data,
+			success: function(response) {
+				location.reload();
+				console.log(response);
+			},
+			error: function(response) {
+				console.log("get new categories failed!");
+			}
+		};
+		$.ajax(args);
+		*/
+	}).trigger( "change" );
+
+
+	$('.btn-default').bind('click', function () {
+		$.get("/annotater", function(data) {
+			//$('#pop-message')[0].innerHTML=data.message;
+		});
+	});
+	//
+	$('.btn-success').bind('click', function () {
+		var annotation_list = []; // list of ids of the annotated terms
+		var selectedImgsIds = getSelectedImgsIds();
+
+		$('.panel .btn-group .btn.active').each(function() {
+			txt = $.trim($(this).text());
+			annotation_list.push(txt);
+		});
+		/*
+		alert(annotation_list);
+		data = {"image_ids": selectedImgsIds, "annotation_terms": annotation_list};
+		//post_to_url('/annotater/submit_image_annotation', {image_ids: selectedImgsIds, annotation_terms: annotation_list});
+		//loadXMLDoc('/annotater/submit_image_annotation', {image_ids: selectedImgsIds, annotation_terms: annotation_list});
+		//alert(annotation_list);
+		annotation_data = {"image_ids": selectedImgsIds, "annotation_terms": annotation_list};
+		var args = {
+		   type: "POST",
+		   url: "/annotater",
+		   data: annotation_data
+		   error: function() {
+			  console.log("Error occurs");
+		   },
+		   success: function() {
+			  console.log("save_modification works");
+		   },
+		   complete:done
+		};
+		*/
+		//$.ajax(args);
+	});
+});
+$(function(){
+	$("select").multiselect();
+});
+</script>

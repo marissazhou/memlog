@@ -1,0 +1,105 @@
+.headbg {
+    background: url("../img/header_v3.png") repeat-x scroll 0 0 transparent;
+    min-height: 57px;
+    position: relative;
+    z-index: 3;
+}
+#folderInput {
+	opacity: 0;
+    -moz-opacity: 0;
+    filter: alpha(opacity=0);
+}
+#fileselect {
+	opacity: 0;
+    -moz-opacity: 0;
+    filter: alpha(opacity=0);
+}
+.addfolder {
+	cursor: pointer;
+    background: #EEEEEE url('{{ STATIC_URL }}img/uploader/addfolder.png') 0 0 no-repeat;
+    width: 150px;
+    height: 35px;
+}
+.addfolder:before{
+content: "add folder";
+}
+.addfile {
+	cursor: pointer;
+    background: #D3D3D3 url(../img/addfile.png) 0 0 no-repeat;
+    width: 150px;
+    height: 35px;
+}
+.addfile:before{
+content: "add file";
+}
+
+#addfilediv label {
+	cursor: pointer;
+	float:left;
+	padding:5px;
+}
+#addfilediv label #addfile:before{
+content: "add file";
+}
+
+#filedrag {
+	display: block;
+	clear: both;
+    font-weight: bold;
+    text-align: center;
+    padding: 1em 0;
+    margin: 1em 0;
+    color: #333333;
+    border: 2px dashed #555;
+    border-radius: 7px;
+    cursor: default;
+}
+
+#filedrag.hover {
+    color: #f00;
+    border-color: #006DCC;
+    border-style: solid;
+    box-shadow: inset 0 3px 4px #888;
+    font-size: large;
+}
+#progressdiv {
+	width: 300px;
+}
+#progressdiv div {
+    background-color:#252f38 ;
+    height:12px;
+    width:100%;
+    left:0;
+    bottom: 0;
+    margin: 10px;
+    box-shadow:0 0 2px #000;
+    text-align:left;
+}
+
+#progressdiv div p{
+    background-color:#2586d0;
+    height:12px;
+    width:0%;
+    
+    box-shadow: 0 0 1px rgba(255, 255, 255, 0.4) inset;
+    
+    -moz-transition:0.25s;
+    -webkit-transition:0.25s;
+    -o-transition:0.25s;
+    transition:0.25s;
+    font-size:8px;
+    position:relative ; 
+    bottom:0px; 
+    padding:0px; 
+    margin:0px 
+}
+
+
+#progressdiv div p.success {
+	width:100% !important;
+}
+
+#progressdiv div p.failed {
+    background: #f00; none 0 0 no-repeat;
+}
+

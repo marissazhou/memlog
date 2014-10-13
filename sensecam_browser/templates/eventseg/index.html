@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% load static %}
+{% load i18n %}
+
+{% block title %} Lifelog Uploader{% endblock %}
+
+{% block content %}
+      <!-- Main hero unit for a primary marketing message or call to action -->
+
+	  <!-- 
+      <div class="hero-unit" style="padding:10px;">
+
+		<div id="addfilediv">
+		<label class="addfolder" style="background: url('{{ STATIC_URL }}img/uploader/addfolder.png' no-repeat;")><input type="file" id="folderInput"  multiple="true" webkitdirectory="true" directory="true" style="top: -0.5px; left: -40px; " /></label>
+		<label class="addfile"><input type="file" id="fileselect" name="fileselect[]" multiple style="top: -0.5px; left: -40px; " /></label>  
+		<div id="filedrag">Drop files here</div>
+        <div id="progressdiv"></div>
+		</div>
+      </div>
+      <hr>
+    </div>--> <!-- /container -->
+
+	<!-- Tenger's update -->
+      <!-- Main hero unit for a primary marketing message or call to action -->
+	  	<!-- <form  enctype="multipart/form-data" action="javascript: uploader_uploadAndSubmit();" method="post" name="demoForm"> -->
+        <!-- <form  enctype="multipart/form-data" action="/fileuploader?a=10000" method="post" name="demoForm"> -->
+        <form  enctype="multipart/form-data" action="/fileuploader" method="post" name="demoForm">
+	  	<!--{_{ form_upload }} -->
+        <p>Upload File: <input type="file" name="file" multiple="true" webkitdirectory="true" directory="true" /></p>
+		<p><input type="submit" value="Submit" /></p>
+		{% csrf_token %}
+		</form>
+       <div>Progessing (in Bytes): <span id="bytesRead"></span> / <span id="bytesTotal"></span></div>
+
+{% endblock %}

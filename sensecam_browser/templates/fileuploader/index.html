@@ -1,0 +1,63 @@
+{% extends "base.html" %}
+{% load static %}
+{% load i18n %}
+
+{% block title %} Lifelog Uploader{% endblock %}
+
+{% block content %}
+      <!-- Main hero unit for a primary marketing message or call to action -->
+
+	  <!-- 
+      <div class="hero-unit" style="padding:10px;">
+
+		<div id="addfilediv">
+		<label class="addfolder" style="background: url('{{ STATIC_URL }}img/uploader/addfolder.png' no-repeat;")><input type="file" id="folderInput"  multiple="true" webkitdirectory="true" directory="true" style="top: -0.5px; left: -40px; " /></label>
+		<label class="addfile"><input type="file" id="fileselect" name="fileselect[]" multiple style="top: -0.5px; left: -40px; " /></label>  
+		<div id="filedrag">Drop files here</div>
+        <div id="progressdiv"></div>
+		</div>
+      </div>
+      <hr>
+    </div>--> <!-- /container -->
+
+	<!-- Tenger's update -->
+      <!-- Main hero unit for a primary marketing message or call to action -->
+        <form  enctype="multipart/form-data" action="/fileuploader" method="post" name="demoForm">{% csrf_token %}
+	  	<!--{_{ form_upload }} -->
+        <!--<p>Upload File: <input type="file" name="file" multiple="true" webkitdirectory="true" directory="true"  class="btn-primary" style="left: -115px; top: 17px;" /></p>-->
+        <p>Upload File: <input type="file" name="file" multiple="true" webkitdirectory="true" directory="true"/></p>
+		<p hidden>Device Type:
+			<!--
+			<select class="form-control" name="uploader_device_type">
+				<option value="0">Autographer</option>
+				<option value="1">SenseCam</option>
+				<option value="2">Android Phone</option>
+				<option value="3">Narrative</option>
+				<option value="4">Funf</option>
+			</select>-->
+
+			<select class="form-control" name="uploader_device_type">
+                <option value="1">DEVICE_TYPE_AUTOGRAPHER</option>
+                <option value="2">DEVICE_TYPE_VICONREVUE</option>
+                <option value="3">DEVICE_TYPE_VICONREVUE</option>
+                <option value="4">DEVICE_TYPE_SENSESEER</option>
+                <option value="5">DEVICE_TYPE_NARRATIVE</option>
+                <option value="6">DEVICE_TYPE_FUNF</option>
+                <option value="7">DEVICE_TYPE_AUTOGRAPHER_U</option>
+                <option value="8">DEVICE_TYPE_SENSECAM_U</option>
+                <option value="9">DEVICE_TYPE_VICONREVUE_U</option>
+                <option value="10">DEVICE_TYPE_SENSESEER_U</option>
+                <option value="11">DEVICE_TYPE_NARRATIVE_U</option>
+                <option value="12">DEVICE_TYPE_FUNF_U</option>
+            </select>
+
+
+		</p>
+		<p><input type="submit" value="Submit" class="btn btn-primary"/></p>
+		</form>
+		<p> Progessing (in Bytes):
+		   <div> <span id="bytesRead"></span> .......... <span id="bytesTotal"></span></div>
+		</p>
+
+		
+{% endblock %}

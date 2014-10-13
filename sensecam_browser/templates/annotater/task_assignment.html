@@ -1,0 +1,63 @@
+{% extends "base.html" %}
+{% load static %}
+{% load i18n %}
+
+{% block title %} Annotator {% endblock %}
+
+{% block content %}
+<div clas="row">
+
+<input type="hidden" id="ipt_username" name="username" value="{{ username }}">
+<input type="hidden" id="ipt_album_dates" name="album_dates" value="{{album_dates}}">
+<input type="hidden" id="ipt_albums" name="albums" value="{{ albums }}">
+
+    <div class="col-md-2">
+	</div>
+    <div class="col-md-8">
+        <div class="row">
+			{% include "annotater/includes/list_annotators.html" %}
+   		</div>
+        <div class="row">
+			<div id="nav-buttons"  class="controls" style="color:black;">
+				<div class="col-md-4"></div>
+				<div class="col-md-2"><i id="prevImg" class="glyphicon glyphicon-arrow-down"></i></div>
+				<div class="col-md-2" ><i id="nextImg" class="glyphicon glyphicon-arrow-up"></i></div>
+				<div class="col-md-4"></div>
+			</div>
+        </div>
+        <div class="row">
+		{% include "annotater/includes/list_tasks.html" %}
+		</div>
+        <div class="row">
+				<div class="col-md-4"></div>
+				<div class="col-md-2"><button type="button" class="btn btn-warning" onclick="submit_assignment();">Submit</button></div>
+				<div class="col-md-2"><button type="button" class="btn btn-info" onclick="cancel_assignment();">Cancel</button></div>
+				<div class="col-md-4"></div>
+		</div>
+    </div>
+    <div class="col-md-2">
+    </div>
+</div>
+{% endblock %}
+
+<script type="text/javascript">
+function submit_assignment() {
+/*
+    var concept=document.forms["add_term_form"]["add_term_concept"].value;
+    if (concept==null || concept==""){
+        alert("Concept must be filled out");
+        return false;
+    }
+    $('#add_term_form').submit(function(e) {
+        if ($.trim($("#add_term_concept, #add_term_category").val()) === "") {
+            e.preventDefault();
+            alert('you did not fill out one of the fields');
+        }
+    });
+    var form = document.getElementById('form_add_term');
+    form.submit();
+*/
+}
+function cancel_assignment() {
+}
+</script>
