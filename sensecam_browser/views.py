@@ -36,13 +36,13 @@ if new_path_logic not in sys.path:
 
 import datetime
 import json
-from django.utils import simplejson
+#from django.utils import simplejson
+import json as simplejson
 from django.utils.decorators import * 
 
 from django.core.urlresolvers import reverse
 from django.views.decorators.csrf import csrf_exempt
 from django.views.decorators.csrf import ensure_csrf_cookie
-from django.views.decorators.csrf import csrf_response_exempt
 
 from django.http import HttpResponse
 from django.views.generic.base import View
@@ -103,7 +103,6 @@ def index_gallery(request):
 	response = template.render(context)
 	return HttpResponse(response)
 
-#@csrf_response_exempt
 #@csrf_exempt
 #@ensure_csrf_cookie
 def my_lifelog(request):

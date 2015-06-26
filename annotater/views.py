@@ -31,7 +31,8 @@ from django.core.context_processors import csrf
 from django.views.decorators.csrf import csrf_exempt
 from django.template.context import RequestContext
 from django.contrib.auth.models import User, Group
-from django.utils import simplejson
+#from django.utils import simplejson
+import json as simplejson
 
 #from fileuploader 
 from utils import *

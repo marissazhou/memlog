@@ -201,7 +201,6 @@ INSTALLED_APPS = (
 
 	# Added.
     'suit',
-    'south',
     'bootstrap_toolkit',
     'django_bootstrap_staticfiles',
     # 'django_php',
@@ -211,8 +210,6 @@ INSTALLED_APPS = (
 
     # Uncomment the next line to enable the admin:
     'django.contrib.admin',
-    # for django project warnings, errors and info
-    'django.contrib.messages',
     # Uncomment the next line to enable admin documentation:
     # 'django.contrib.admindocs',
 

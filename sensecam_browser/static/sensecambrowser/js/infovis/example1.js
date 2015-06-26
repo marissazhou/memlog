@@ -31,40 +31,40 @@ function init(){
   var json = [
       {
         "adjacencies": [
-            "memo_node_21", 
+            "Omni Shopping Center", 
             {
-              "nodeTo": "memo_node_1",
-              "nodeFrom": "memo_node_0",
+              "nodeTo": "DCU",
+              "nodeFrom": "Paper",
               "data": {
                 "$color": "#557EAA"
               }
             }, {
-              "nodeTo": "memo_node_13",
-              "nodeFrom": "memo_node_0",
+              "nodeTo": "cup",
+              "nodeFrom": "Paper",
               "data": {
                 "$color": "#909291"
               }
             }, {
-              "nodeTo": "memo_node_14",
-              "nodeFrom": "memo_node_0",
+              "nodeTo": "Mobile Phone",
+              "nodeFrom": "Paper",
               "data": {
                 "$color": "#557EAA"
               }
             }, {
-              "nodeTo": "memo_node_15",
-              "nodeFrom": "memo_node_0",
+              "nodeTo": "Standing",
+              "nodeFrom": "Paper",
               "data": {
                 "$color": "#557EAA"
               }
             }, {
-              "nodeTo": "memo_node_16",
-              "nodeFrom": "memo_node_0",
+              "nodeTo": "Mum's Home",
+              "nodeFrom": "Paper",
               "data": {
                 "$color": "#557EAA"
               }
             }, {
-              "nodeTo": "memo_node_17",
-              "nodeFrom": "memo_node_0",
+              "nodeTo": "printer",
+              "nodeFrom": "Paper",
               "data": {
                 "$color": "#557EAA"
               }
@@ -75,91 +75,91 @@ function init(){
           "$type": "circle",
           "$dim": 10
         },
-        "id": "memo_node_0",
-        "name": "memo_node_0"
+        "id": "Paper",
+        "name": "Paper"
       }, {
         "adjacencies": [
             {
-              "nodeTo": "memo_node_2",
-              "nodeFrom": "memo_node_1",
+              "nodeTo": "work",
+              "nodeFrom": "DCU",
               "data": {
                 "$color": "#557EAA"
               }
             }, {
-              "nodeTo": "memo_node_4",
-              "nodeFrom": "memo_node_1",
+              "nodeTo": "Henry Street",
+              "nodeFrom": "DCU",
               "data": {
                 "$color": "#909291"
               }
             }, {
-              "nodeTo": "memo_node_5",
-              "nodeFrom": "memo_node_1",
+              "nodeTo": "MacBook",
+              "nodeFrom": "DCU",
               "data": {
                 "$color": "#909291"
               }
             }, {
-              "nodeTo": "memo_node_6",
-              "nodeFrom": "memo_node_1",
+              "nodeTo": "Salmon",
+              "nodeFrom": "DCU",
               "data": {
                 "$color": "#909291"
               }
             }, {
-              "nodeTo": "memo_node_7",
-              "nodeFrom": "memo_node_1",
+              "nodeTo": "Car Park",
+              "nodeFrom": "DCU",
               "data": {
                 "$color": "#909291"
               }
             }, {
-              "nodeTo": "memo_node_8",
-              "nodeFrom": "memo_node_1",
+              "nodeTo": "security",
+              "nodeFrom": "DCU",
               "data": {
                 "$color": "#909291"
               }
             }, {
-              "nodeTo": "memo_node_10",
-              "nodeFrom": "memo_node_1",
+              "nodeTo": "Howth Junction",
+              "nodeFrom": "DCU",
               "data": {
                 "$color": "#557EAA"
               }
             }, {
-              "nodeTo": "memo_node_11",
-              "nodeFrom": "memo_node_1",
+              "nodeTo": "Spar",
+              "nodeFrom": "DCU",
               "data": {
                 "$color": "#909291"
               }
             }, {
-              "nodeTo": "memo_node_12",
-              "nodeFrom": "memo_node_1",
+              "nodeTo": "Email",
+              "nodeFrom": "DCU",
               "data": {
                 "$color": "#909291"
               }
             }, {
-              "nodeTo": "memo_node_13",
-              "nodeFrom": "memo_node_1",
+              "nodeTo": "cup",
+              "nodeFrom": "DCU",
               "data": {
                 "$color": "#557EAA"
               }
             }, {
-              "nodeTo": "memo_node_14",
-              "nodeFrom": "memo_node_1",
+              "nodeTo": "Mobile Phone",
+              "nodeFrom": "DCU",
               "data": {
                 "$color": "#557EAA"
               }
             }, {
-              "nodeTo": "memo_node_15",
-              "nodeFrom": "memo_node_1",
+              "nodeTo": "Standing",
+              "nodeFrom": "DCU",
               "data": {
                 "$color": "#557EAA"
               }
             }, {
-              "nodeTo": "memo_node_16",
-              "nodeFrom": "memo_node_1",
+              "nodeTo": "Mum's Home",
+              "nodeFrom": "DCU",
               "data": {
                 "$color": "#909291"
               }
             }, {
-              "nodeTo": "memo_node_17",
-              "nodeFrom": "memo_node_1",
+              "nodeTo": "printer",
+              "nodeFrom": "DCU",
               "data": {
                 "$color": "#557EAA"
               }
@@ -170,25 +170,25 @@ function init(){
           "$type": "circle",
           "$dim": 11
         },
-        "id": "memo_node_1",
-        "name": "memo_node_1"
+        "id": "DCU",
+        "name": "DCU"
       }, {
         "adjacencies": [
             {
-              "nodeTo": "memo_node_5",
-              "nodeFrom": "memo_node_2",
+              "nodeTo": "MacBook",
+              "nodeFrom": "work",
               "data": {
                 "$color": "#909291"
               }
             }, {
-              "nodeTo": "memo_node_9",
-              "nodeFrom": "memo_node_2",
+              "nodeTo": "Mouse",
+              "nodeFrom": "work",
               "data": {
                 "$color": "#557EAA"
               }
             }, {
-              "nodeTo": "memo_node_18",
-              "nodeFrom": "memo_node_2",
+              "nodeTo": "Examination",
+              "nodeFrom": "work",
               "data": {
                 "$color": "#557EAA"
               }
@@ -199,31 +199,31 @@ function init(){
           "$type": "circle",
           "$dim": 7
         },
-        "id": "memo_node_2",
-        "name": "memo_node_2"
+        "id": "work",
+        "name": "work"
       }, {
         "adjacencies": [
             {
-              "nodeTo": "memo_node_5",
-              "nodeFrom": "memo_node_3",
+              "nodeTo": "MacBook",
+              "nodeFrom": "computer",
               "data": {
                 "$color": "#909291"
               }
             }, {
-              "nodeTo": "memo_node_9",
-              "nodeFrom": "memo_node_3",
+              "nodeTo": "Mouse",
+              "nodeFrom": "computer",
               "data": {
                 "$color": "#557EAA"
               }
             }, {
-              "nodeTo": "memo_node_10",
-              "nodeFrom": "memo_node_3",
+              "nodeTo": "Howth Junction",
+              "nodeFrom": "computer",
               "data": {
                 "$color": "#557EAA"
               }
             }, {
-              "nodeTo": "memo_node_12",
-              "nodeFrom": "memo_node_3",
+              "nodeTo": "Email",
+              "nodeFrom": "computer",
               "data": {
                 "$color": "#557EAA"
               }
@@ -234,8 +234,8 @@ function init(){
           "$type": "square",
           "$dim": 10
         },
-        "id": "memo_node_3",
-        "name": "memo_node_3"
+        "id": "computer",
+        "name": "computer"
       }, {
         "adjacencies": [],
         "data": {
@@ -243,13 +243,13 @@ function init(){
           "$type": "square",
           "$dim": 11
         },
-        "id": "memo_node_4",
-        "name": "memo_node_4"
+        "id": "Henry Street",
+        "name": "Henry Street"
       }, {
         "adjacencies": [
           {
-            "nodeTo": "memo_node_9",
-            "nodeFrom": "memo_node_5",
+            "nodeTo": "Mouse",
+            "nodeFrom": "MacBook",
             "data": {
               "$color": "#909291"
             }
@@ -260,19 +260,19 @@ function init(){
           "$type": "triangle",
           "$dim": 8
         },
-        "id": "memo_node_5",
-        "name": "memo_node_5"
+        "id": "MacBook",
+        "name": "MacBook"
       }, {
         "adjacencies": [
             {
-              "nodeTo": "memo_node_10",
-              "nodeFrom": "memo_node_6",
+              "nodeTo": "Howth Junction",
+              "nodeFrom": "Salmon",
               "data": {
                 "$color": "#557EAA"
               }
             }, {
-              "nodeTo": "memo_node_11",
-              "nodeFrom": "memo_node_6",
+              "nodeTo": "Spar",
+              "nodeFrom": "Salmon",
               "data": {
                 "$color": "#557EAA"
               }
@@ -283,8 +283,8 @@ function init(){
           "$type": "circle",
           "$dim": 11
         },
-        "id": "memo_node_6",
-        "name": "memo_node_6"
+        "id": "Salmon",
+        "name": "Salmon"
       }, {
         "adjacencies": [],
         "data": {
@@ -292,8 +292,8 @@ function init(){
           "$type": "triangle",
           "$dim": 12
         },
-        "id": "memo_node_7",
-        "name": "memo_node_7"
+        "id": "Car Park",
+        "name": "Car Park"
       }, {
         "adjacencies": [],
         "data": {
@@ -301,8 +301,8 @@ function init(){
           "$type": "star",
           "$dim": 10
         },
-        "id": "memo_node_8",
-        "name": "memo_node_8"
+        "id": "security",
+        "name": "security"
       }, {
         "adjacencies": [],
         "data": {
@@ -310,13 +310,13 @@ function init(){
           "$type": "circle",
           "$dim": 12
         },
-        "id": "memo_node_9",
-        "name": "memo_node_9"
+        "id": "Mouse",
+        "name": "Mouse"
       }, {
         "adjacencies": [
           {
-            "nodeTo": "memo_node_11",
-            "nodeFrom": "memo_node_10",
+            "nodeTo": "Spar",
+            "nodeFrom": "Howth Junction",
             "data": {
               "$color": "#909291"
             }
@@ -327,8 +327,8 @@ function init(){
           "$type": "triangle",
           "$dim": 11
         },
-        "id": "memo_node_10",
-        "name": "memo_node_10"
+        "id": "Howth Junction",
+        "name": "Howth Junction"
       }, {
         "adjacencies": [],
         "data": {
@@ -336,8 +336,8 @@ function init(){
           "$type": "circle",
           "$dim": 11
         },
-        "id": "memo_node_11",
-        "name": "memo_node_11"
+        "id": "Spar",
+        "name": "Spar"
       }, {
         "adjacencies": [],
         "data": {
@@ -345,13 +345,13 @@ function init(){
           "$type": "triangle",
           "$dim": 10
         },
-        "id": "memo_node_12",
-        "name": "memo_node_12"
+        "id": "Email",
+        "name": "Email"
       }, {
         "adjacencies": [
           {
-            "nodeTo": "memo_node_14",
-            "nodeFrom": "memo_node_13",
+            "nodeTo": "Mobile Phone",
+            "nodeFrom": "cup",
             "data": {
               "$color": "#557EAA"
             }
@@ -362,8 +362,8 @@ function init(){
           "$type": "star",
           "$dim": 7
         },
-        "id": "memo_node_13",
-        "name": "memo_node_13"
+        "id": "cup",
+        "name": "cup"
       }, {
         "adjacencies": [],
         "data": {
@@ -371,19 +371,19 @@ function init(){
           "$type": "triangle",
           "$dim": 12
         },
-        "id": "memo_node_14",
-        "name": "memo_node_14"
+        "id": "Mobile Phone",
+        "name": "Mobile Phone"
       }, {
         "adjacencies": [
             {
-              "nodeTo": "memo_node_16",
-              "nodeFrom": "memo_node_15",
+              "nodeTo": "Mum's Home",
+              "nodeFrom": "Standing",
               "data": {
                 "$color": "#557EAA"
               }
             }, {
-              "nodeTo": "memo_node_17",
-              "nodeFrom": "memo_node_15",
+              "nodeTo": "printer",
+              "nodeFrom": "Standing",
               "data": {
                 "$color": "#557EAA"
               }
@@ -394,13 +394,13 @@ function init(){
           "$type": "triangle",
           "$dim": 11
         },
-        "id": "memo_node_15",
-        "name": "memo_node_15"
+        "id": "Standing",
+        "name": "Standing"
       }, {
         "adjacencies": [
           {
-            "nodeTo": "memo_node_17",
-            "nodeFrom": "memo_node_16",
+            "nodeTo": "printer",
+            "nodeFrom": "Mum's Home",
             "data": {
               "$color": "#557EAA"
             }
@@ -411,8 +411,8 @@ function init(){
           "$type": "star",
           "$dim": 7
         },
-        "id": "memo_node_16",
-        "name": "memo_node_16"
+        "id": "Mum's Home",
+        "name": "Mum's Home"
       }, {
         "adjacencies": [],
         "data": {
@@ -420,19 +420,19 @@ function init(){
           "$type": "circle",
           "$dim": 7
         },
-        "id": "memo_node_17",
-        "name": "memo_node_17"
+        "id": "printer",
+        "name": "printer"
       }, {
         "adjacencies": [
             {
-              "nodeTo": "memo_node_19",
-              "nodeFrom": "memo_node_18",
+              "nodeTo": "Student",
+              "nodeFrom": "Examination",
               "data": {
                 "$color": "#557EAA"
               }
             }, {
-              "nodeTo": "memo_node_20",
-              "nodeFrom": "memo_node_18",
+              "nodeTo": "UCD",
+              "nodeFrom": "Examination",
               "data": {
                 "$color": "#557EAA"
               }
@@ -443,8 +443,8 @@ function init(){
           "$type": "triangle",
           "$dim": 9
         },
-        "id": "memo_node_18",
-        "name": "memo_node_18"
+        "id": "Examination",
+        "name": "Examination"
       }, {
         "adjacencies": [],
         "data": {
@@ -452,8 +452,8 @@ function init(){
           "$type": "circle",
           "$dim": 8
         },
-        "id": "memo_node_19",
-        "name": "memo_node_19"
+        "id": "Student",
+        "name": "Student"
       }, {
         "adjacencies": [],
         "data": {
@@ -461,8 +461,8 @@ function init(){
           "$type": "star",
           "$dim": 8
         },
-        "id": "memo_node_20",
-        "name": "memo_node_20"
+        "id": "UCD",
+        "name": "UCD"
       }
   ];
   // end
